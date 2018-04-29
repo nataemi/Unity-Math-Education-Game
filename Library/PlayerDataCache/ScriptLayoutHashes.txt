@@ -191,3 +191,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 403fcf569ca34c9e12ec24b843c7a1d1 Assembly-CSharp.dll:.Example04
 a885b5718618457f4959f03284f3d6c2 Assembly-CSharp.dll:MaterialUI.TextInputLine
 5ab1677d31916f29db021c86cd24d748 Assembly-CSharp.dll:MaterialUI.MenuArrowAnim
+0e25d15c45ae5aabec2fc3f80e6ff181 Assembly-CSharp.dll:.PEKManager

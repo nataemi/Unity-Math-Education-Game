@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - 0
+  - 3
+  - 1
+  - 2
+  - Puzzle Button
+  - PEKName
   layers:
   - Default
   - TransparentFX

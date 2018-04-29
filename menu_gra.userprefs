@@ -1,8 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MEMORy/GameControler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PEKManager.cs">
     <Files>
-      <File FileName="Assets/MEMORy/GameControler.cs" Line="29" Column="56" />
+      <File FileName="Assets/PEKManager.cs" Line="44" Column="27" />
+      <File FileName="Assets/MEMORy/GameControler.cs" Line="46" Column="16" />
+      <File FileName="Assets/MEMORy/AddButtons.cs" Line="16" Column="38" />
+      <File FileName="Assets/runScene.cs" Line="7" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

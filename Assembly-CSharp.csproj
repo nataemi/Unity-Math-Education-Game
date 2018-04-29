@@ -61,6 +61,7 @@
      <Compile Include="Assets\mainMenu.cs" />
      <Compile Include="Assets\MEMORy\AddButtons.cs" />
      <Compile Include="Assets\MEMORy\GameControler.cs" />
+     <Compile Include="Assets\PEKManager.cs" />
      <Compile Include="Assets\Quiz\GameManager2.cs" />
      <Compile Include="Assets\Quiz\MaterialUI\Examples\Scripts\04 - RadioButton\Example04.cs" />
      <Compile Include="Assets\Quiz\MaterialUI\Examples\Scripts\05 - Sliders\Example05.cs" />
