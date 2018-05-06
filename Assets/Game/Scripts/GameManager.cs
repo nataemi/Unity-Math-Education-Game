@@ -4,7 +4,8 @@ using System.IO; // this is required for input and output of data
 using System;
 using System.Runtime.Serialization.Formatters.Binary;//this is required to convert data into binary
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     //we make static so in games only one script is name as this
     public static GameManager singleton;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour {
 
     public int currentMode;
 
-    
+
     //data to store on device
     public int hiScore;
     public bool isMusicOn;
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour {
             isGameStartedFirstTime = false;
             hiScore = 0;
             isMusicOn = true;
- 
+
             data = new GameData();
 
 
@@ -93,17 +94,20 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
+
             isGameStartedFirstTime = data.getIsGameStartedFirstTime();
             isMusicOn = data.getIsMusicOn();
-            hiScore = api.getHighScore();
- 
-        } 
+            string[] gameData = api.getGamePeckDetails(2, 1);
+            Debug.Log(api.GetDataValue(gameData[0], "answer:"));
+            hiScore = api.getHighScore(2,1,1);
+
+        }
 
 
     }
 
 
-     
+
     public void Save()
     {
         FileStream file = null;
@@ -115,14 +119,14 @@ public class GameManager : MonoBehaviour {
             if (data != null)
             {
 
-                api.insertScore(hiScore,1,1);
+                api.insertScore(hiScore, 1, 1);
                 data.setHiScore(hiScore);
                 data.setIsMusicOn(isMusicOn);
                 data.setIsGameStartedFirstTime(isGameStartedFirstTime);
 
                 bf.Serialize(file, data);
 
-            } 
+            }
         }
         catch (Exception e)
         {
@@ -168,7 +172,7 @@ class GameData
     private int hiScore;
     private bool isMusicOn;
     private bool isGameStartedFirstTime;
-   
+
 
 
     public void setIsGameStartedFirstTime(bool isGameStartedFirstTime)
@@ -178,22 +182,22 @@ class GameData
 
     public bool getIsGameStartedFirstTime()
     {
-   
+
         return isGameStartedFirstTime;
-    } 
+    }
 
 
     //HiScore
     public void setHiScore(int hiScore)
     {
 
-   
+
         this.hiScore = hiScore;
     }
-     
+
     public int getHiScore()
     {
-     
+
         return hiScore;
     }
 
