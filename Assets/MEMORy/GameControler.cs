@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameControler : MonoBehaviour {
 
@@ -24,9 +26,18 @@ public class GameControler : MonoBehaviour {
 
 	private string firstGuessPuzzle, secoundGuessPuzzle;
 
+	// od tego momentu cos mieszam jbc to to wypierdol
+	[SerializeField]
+	private GameObject puzzleField;
+
+	[SerializeField]
+	private GameObject endPanel;
+
+
+
 
 	void Awake(){
-		Sprite[] puzzlesTemp = Resources.LoadAll<Sprite> ("11");
+		Sprite[] puzzlesTemp = Resources.LoadAll<Sprite> ("PEK 10");
 
 		for (int i = 0; i < puzzlesTemp.Length; i++) {
 			puzzles.Add (puzzlesTemp [i]);
@@ -34,19 +45,20 @@ public class GameControler : MonoBehaviour {
 
 	}
 
-	void Start(){
+	IEnumerator Start(){
 		GetButtons();
 		AddListeners ();
 		AddGamePuzzles ();
 		Shuffle (gamePuzzles);
 		gameGuesses = gamePuzzles.Count / 2;
+		yield return new WaitForSeconds (2.0f);
 	}
 
 	void GetButtons(){
 		GameObject[] objects = GameObject.FindGameObjectsWithTag("Puzzle Button");
 
 		for (int i = 0; i < objects.Length; i++) {
-			btns.Add (objects[i].GetComponent<Button>());
+			btns[i] = objects[i].GetComponent<Button>();
 			btns [i].image.sprite = bgImage;
 		}
 	}
@@ -94,9 +106,9 @@ public class GameControler : MonoBehaviour {
 	}
 
 	IEnumerator CheckIfThePuzzlesMatch(){
-		yield return new WaitForSeconds (.5f);
+		yield return new WaitForSeconds (.1f);
 		if (firstGuessPuzzle == secoundGuessPuzzle+"odp" || secoundGuessPuzzle == firstGuessPuzzle+"odp") {
-			yield return new WaitForSeconds (.5f);
+			yield return new WaitForSeconds (.1f);
 			btns [firstGuessIndex].interactable = false;
 			btns [secoundGuessIndex].interactable = false;
 
@@ -104,13 +116,13 @@ public class GameControler : MonoBehaviour {
 			btns [secoundGuessIndex].image.color = new Color (0, 0, 0, 0);
 			CheckIfTheGameIsFinished ();
 		} else {
-			yield return new WaitForSeconds (.5f);
+			yield return new WaitForSeconds (.1f);
 			btns [firstGuessIndex].image.sprite = bgImage;
 			btns [secoundGuessIndex].image.sprite = bgImage;
 
 		}
 
-		yield return new WaitForSeconds (.5f);
+		yield return new WaitForSeconds (.1f);
 
 		firstGuess = secoundGuess = false;
 	}
@@ -121,7 +133,24 @@ public class GameControler : MonoBehaviour {
 		if (countCorrectGuesses == gameGuesses) {
 			Debug.Log ("Game finished");
 			Debug.Log ("It took you:" + countGuesses);
-			Application.Quit ();
+
+
+			puzzleField.SetActive (false);
+			endPanel.SetActive (true);
+			GameObject textfield = GameObject.FindGameObjectWithTag("Congrats");
+			textfield.GetComponent<Text> ().text = "Gratulacje! Potrzebowałeś " + countGuesses + " prób.";
+			GameObject button =  GameObject.FindGameObjectWithTag("Restart");
+			Button myButton =  button.GetComponent<Button>();
+			myButton.onClick.AddListener (() => {runScene.NextScene("MEMORY");}); 
+			GameObject button2 =  GameObject.FindGameObjectWithTag("Powrot");
+			Button myButton2 =  button2.GetComponent<Button>();
+			/*GameObject klasa1 =  GameObject.FindGameObjectWithTag("Klasa 1");
+			klasa1.SetActive (true);
+			GameObject gry =  GameObject.FindGameObjectWithTag("Gry");
+			gry.SetActive (false); to nie dziala a szkoda*/ 
+			myButton2.onClick.AddListener (() => {runScene.NextScene("MENU");});
+			// tu trzeba to jakos zrobic zeby odpalalo tego peka co chcesz , ewentualnie zrobic tak zeby wracalo do klasy 1
+
 		}
 	}
 
@@ -133,7 +162,10 @@ public class GameControler : MonoBehaviour {
 			list [i] = list [randomindex];
 			list [randomindex] = temp;
 		}
+
+
 	}
+		
 
 }
 // zeby przerobic tak zeby byly rzymskie i arabskie to pewnie musisz zrobic np name + "a" i dodac arabskie z nazwami 1a , 2a CHYBA 

@@ -1,8 +1,8 @@
 OSXStandalone
 SceneListBegin?
 Assets/MENU.unity
-Assets/MEMORy/MEMORY.unity
 Assets/Game/Scene/GamePlay.unity
+Assets/MEMORy/MEMORY.unity
 SceneListEnd?
 0e206abc0faa955f6cacb43f89f0a444 Assembly-CSharp.dll:MaterialUI.RippleAnim
 589fe6e1867b6a18424a9606d79fe6bf Assembly-CSharp.dll:MaterialUI.NavDrawerConfig
@@ -136,7 +136,7 @@ fc432a39eaeef78297108013f8d37dcf Assembly-CSharp.dll:MaterialUI.ToastAnim
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.mainMenu
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MaterialUI.SelectionBoxSubscriber
 653af8f619e12c983ea590c735eeba09 Assembly-CSharp.dll:MaterialUI.InputFieldConfig
-687aa9d1b184305aa06e5b80d8a0e3f7 Assembly-CSharp.dll:.GameControler
+4adc75c5469ad36a47315af911813570 Assembly-CSharp.dll:.GameControler
 dfd8612f103c62f6217bf0d9b9f3c497 Assembly-CSharp.dll:MaterialUI.SliderConfig
 e45161899efe8cad5875bda2ebdec31d Assembly-CSharp.dll:MaterialUI.ShadowSnap
 e5d9ab3e3afae89fd535a121729c2aad Assembly-CSharp.dll:.Example05
@@ -184,6 +184,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 6ced5e30b46aade805ee2cd388523322 Assembly-CSharp.dll:MaterialUI.CheckBoxToggler
 855e6c2cc83470f708608120f850e5d7 Assembly-CSharp.dll:MaterialUI.ScreenConfig
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+0e25d15c45ae5aabec2fc3f80e6ff181 Assembly-CSharp.dll:.PEKManager
 173ee9cd7f58f985fd36810bdb7ded46 Assembly-CSharp.dll:.GameController
 725f39fbf34790ae025ddeadf288f717 Assembly-CSharp.dll:.ToggleTextChanger
 8f9ca3035a51ae9fa67a3f8ceed38ca2 Assembly-CSharp.dll:MaterialUI.ShadowConfig
