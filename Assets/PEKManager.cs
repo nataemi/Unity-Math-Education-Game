@@ -51,4 +51,10 @@ public class PEKManager : MonoBehaviour {
 			textfield.text = gameTitles [i];
 		}
 	}
+
+	public void onButtonClick(){
+		setPEKName ();
+		createGameButtons ();
+	}
+
 }

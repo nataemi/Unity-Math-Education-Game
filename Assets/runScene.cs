@@ -7,5 +7,6 @@ public class runScene : MonoBehaviour
 	public static void NextScene(string scene)
 	{
 		SceneManager.LoadScene(scene);
+		// czy to zamyka poprzednia scene?
 	}
 }

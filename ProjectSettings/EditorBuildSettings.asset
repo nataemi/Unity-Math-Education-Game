@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/MENU.unity
     guid: 245d7e897b7e94c8d9c4b3defeece28a
   - enabled: 1
-    path: Assets/MEMORY.unity
-    guid: 190bea6c5e6e44647936a849ff9c6e05
-  - enabled: 1
     path: Assets/Game/Scene/GamePlay.unity
     guid: efadb13596a5efb49a2d1d21b21e4553
+  - enabled: 1
+    path: Assets/MEMORy/MEMORY.unity
+    guid: 190bea6c5e6e44647936a849ff9c6e05
